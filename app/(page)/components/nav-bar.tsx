@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { navigations } from "./routes";
+import { navigations } from "@/config/routes";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
