@@ -20,6 +20,9 @@ importers:
       dayjs:
         specifier: ^1.11.13
         version: 1.11.13
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
