@@ -1,0 +1,21 @@
+# 构建产物
+dist
+build
+.next
+.out
+
+# 依赖
+node_modules
+.pnp.*
+
+# 锁文件
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+
+# 自动生成
+CHANGELOG.md
+coverage
+
+# 其它
+*.md

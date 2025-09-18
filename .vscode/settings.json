@@ -5,6 +5,8 @@
     "bvid",
     "danmaku",
     "outchain",
-    "Ucke"
-  ]
+    "Ucke",
+    "unrs"
+  ],
+  "prettier.requireConfig": true,
 }
