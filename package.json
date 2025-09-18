@@ -6,7 +6,7 @@
 		"dev": "next dev --turbopack --port 9090",
 		"build": "next build",
 		"start": "next start -p 9090",
-		"lint": "next lint",
+		"lint": "eslint .",
 		"commit": "commit",
 		"prepare": "node .husky/install.mjs"
 	},
@@ -43,6 +43,7 @@
 		"@types/react-dom": "^19.1.9",
 		"eslint": "^9.35.0",
 		"eslint-config-next": "^15.5.3",
+		"eslint-config-prettier": "^10.1.8",
 		"eslint-plugin-react-hooks": "^5.2.0",
 		"husky": "^9.1.7",
 		"lint-staged": "^16.1.6",
