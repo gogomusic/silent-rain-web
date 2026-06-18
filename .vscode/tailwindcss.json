@@ -1,0 +1,87 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@theme",
+      "description": "Tailwind CSS v4 主题指令，用于定义设计令牌（颜色、字体、间距等）。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/theme"
+        }
+      ]
+    },
+    {
+      "name": "@import",
+      "description": "导入 Tailwind CSS 样式表。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/import"
+        }
+      ]
+    },
+    {
+      "name": "@tailwind",
+      "description": "Tailwind CSS 指令，用于注入默认样式。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/functions-and-directives"
+        }
+      ]
+    },
+    {
+      "name": "@apply",
+      "description": "Tailwind CSS 指令，用于在 CSS 中内联应用工具类。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/functions-and-directives"
+        }
+      ]
+    },
+    {
+      "name": "@config",
+      "description": "Tailwind CSS 指令，用于指定配置文件。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/functions-and-directives"
+        }
+      ]
+    },
+    {
+      "name": "@variant",
+      "description": "Tailwind CSS v4 变体指令。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/functions-and-directives"
+        }
+      ]
+    },
+    {
+      "name": "@custom-variant",
+      "description": "Tailwind CSS v4 自定义变体指令。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/functions-and-directives"
+        }
+      ]
+    },
+    {
+      "name": "@utility",
+      "description": "Tailwind CSS v4 自定义工具类指令。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/functions-and-directives"
+        }
+      ]
+    }
+  ],
+  "properties": [],
+  "cssVars": []
+}

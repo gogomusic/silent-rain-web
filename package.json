@@ -1,0 +1,49 @@
+{
+  "name": "silent-rain-web",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 9090",
+    "build": "next build",
+    "start": "next start -p 9090",
+    "lint": "biome check",
+    "format": "biome format --write",
+    "prepare": "husky"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,mjs,cjs,mts,cts,json,css}": [
+      "biome check --write --no-errors-on-unmatched"
+    ]
+  },
+  "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "ahooks": "^3.9.7",
+    "clsx": "^2.1.1",
+    "dayjs": "^1.11.21",
+    "gsap": "^3.15.0",
+    "lodash": "^4.18.1",
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "swiper": "^12.2.0",
+    "ulid": "^3.0.2"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.2.0",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "@commitlint/prompt-cli": "^21.0.2",
+    "@commitlint/types": "^21.0.1",
+    "@tailwindcss/postcss": "^4.3.1",
+    "@tailwindcss/typography": "^0.5.20",
+    "@types/lodash": "^4.17.24",
+    "@types/node": "^20.19.43",
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3",
+    "babel-plugin-react-compiler": "1.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.7",
+    "tailwindcss": "^4.3.1",
+    "typescript": "^5.9.3"
+  }
+}

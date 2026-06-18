@@ -1,0 +1,9 @@
+{
+  "js/ts.tsdk.path": "node_modules\\typescript\\lib",
+  "css.customData": [".vscode/tailwindcss.json"],
+  "editor.codeActionsOnSave": {
+    "source.organizeImports.biome": "explicit",
+    "source.fixAll.biome": "explicit"
+  },
+  "cSpell.words": ["outchain", "unrs"]
+}
