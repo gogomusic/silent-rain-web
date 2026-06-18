@@ -80,6 +80,16 @@
           "url": "https://tailwindcss.com/docs/functions-and-directives"
         }
       ]
+    },
+    {
+      "name": "@plugin",
+      "description": "Tailwind CSS v4 插件指令，用于加载官方或社区插件。",
+      "references": [
+        {
+          "name": "Tailwind CSS 文档",
+          "url": "https://tailwindcss.com/docs/functions-and-directives#plugin-directive"
+        }
+      ]
     }
   ],
   "properties": [],

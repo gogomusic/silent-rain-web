@@ -13,10 +13,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" className="h-full antialiased">
+    <html lang="zh-CN" className="h-full antialiased" data-theme="dark">
       <body className="min-h-full">
         {children}
-        <div className="absolute top-0 left-0 -z-1 w-screen h-dvh">
+        <div className="fixed top-0 left-0 -z-1 w-screen h-dvh">
           <RainBg />
         </div>
       </body>
