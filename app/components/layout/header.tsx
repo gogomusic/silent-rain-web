@@ -191,7 +191,7 @@ export function Header() {
               className="w-7 h-7 "
             />
           </div>
-          <span className="text-foreground">静夜聆雨</span>
+          <span className="text-foreground font-extralight">静夜聆雨</span>
         </Link>
 
         {/* Desktop Nav */}

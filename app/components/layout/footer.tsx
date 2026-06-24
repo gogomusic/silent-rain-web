@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Copyright from "./copyright";
 
 const socialLinks = [
   {
@@ -103,9 +104,7 @@ export function Footer() {
         </nav>
 
         {/* Copyright */}
-        <p className="text-xs tracking-wide text-foreground/30">
-          Copyright {new Date().getFullYear()} 静夜聆雨
-        </p>
+        <Copyright />
       </div>
     </footer>
   );
