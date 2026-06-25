@@ -1,50 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import clsx from "clsx";
-import localFont from "next/font/local";
+import { Noto_Sans_SC } from "next/font/google";
 import { Footer } from "./components/layout/footer";
 import { Header } from "./components/layout/header";
 import { ThemeRainBg } from "./components/rain-bg/theme-rain-bg";
 
-const notoSansSC = localFont({
-  src: [
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-100.woff2",
-      weight: "100",
-    },
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-200.woff2",
-      weight: "200",
-    },
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-300.woff2",
-      weight: "300",
-    },
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-regular.woff2",
-      weight: "400",
-    },
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-500.woff2",
-      weight: "500",
-    },
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-600.woff2",
-      weight: "600",
-    },
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-700.woff2",
-      weight: "700",
-    },
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-800.woff2",
-      weight: "800",
-    },
-    {
-      path: "./assets/fonts/noto-sans-sc-v37-chinese-simplified/noto-sans-sc-v37-chinese-simplified-900.woff2",
-      weight: "900",
-    },
-  ],
+const notoSansSC = Noto_Sans_SC({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  display: "swap",
+  variable: "--font-noto",
 });
 
 export const metadata: Metadata = {
@@ -54,8 +20,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  auth,
 }: Readonly<{
   children: React.ReactNode;
+  auth: React.ReactNode;
 }>) {
   return (
     <html
@@ -70,6 +38,7 @@ export default function RootLayout({
         <div className="fixed top-0 left-0 -z-1 w-screen h-dvh">
           <ThemeRainBg />
         </div>
+        {auth}
       </body>
     </html>
   );
