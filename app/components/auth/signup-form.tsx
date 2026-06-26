@@ -1,5 +1,6 @@
 "use client";
 
+import { REGEXP_ONLY_DIGITS } from "input-otp";
 import { useRouter } from "next/navigation";
 import {
   type SubmitEvent,
@@ -24,6 +25,11 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
 
 const CAPTCHA_KEY = "captcha_sent_at";
 const CAPTCHA_DURATION = 60;
@@ -43,7 +49,7 @@ const signupSchema = z
     email: z.email("邮箱格式不正确").trim(),
     password: z.string().min(6, "密码至少 6 个字符").trim(),
     confirmPassword: z.string().min(1, "请确认密码").trim(),
-    captcha: z.string().min(1, "验证码不能为空").trim(),
+    captcha: z.string().length(6, "验证码未填写完整").trim(),
   })
   .refine((data) => data.password === data.confirmPassword, {
     message: "两次密码不一致",
@@ -238,14 +244,26 @@ const SignupForm: React.FC = () => {
 
         <Field data-invalid={!!fieldErrors.captcha}>
           <FieldLabel htmlFor="captcha">验证码</FieldLabel>
-          <div className="flex gap-2">
-            <Input
+
+          <div className="flex gap-5 justify-center">
+            <InputOTP
+              maxLength={6}
               id="captcha"
               name="captcha"
               className="flex-1"
               aria-invalid={!!fieldErrors.captcha}
+              pattern={REGEXP_ONLY_DIGITS}
               required
-            />
+            >
+              <InputOTPGroup>
+                <InputOTPSlot index={0} />
+                <InputOTPSlot index={1} />
+                <InputOTPSlot index={2} />
+                <InputOTPSlot index={3} />
+                <InputOTPSlot index={4} />
+                <InputOTPSlot index={5} />
+              </InputOTPGroup>
+            </InputOTP>
             <Button
               type="button"
               variant="outline"
@@ -256,6 +274,7 @@ const SignupForm: React.FC = () => {
               {countdown > 0 ? `${countdown}s` : "发送验证码"}
             </Button>
           </div>
+
           <FieldError
             errors={fieldErrors.captcha?.map((m) => ({ message: m }))}
           />
