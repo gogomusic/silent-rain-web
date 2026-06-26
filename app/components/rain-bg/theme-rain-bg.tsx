@@ -1,26 +1,19 @@
 "use client";
 
+import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { RainBg } from "./index";
 
 export function ThemeRainBg() {
-  const [show, setShow] = useState(true);
+  const [mounted, setMounted] = useState(false);
+  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
-    const check = () => {
-      setShow(document.documentElement.getAttribute("data-theme") === "dark");
-    };
-    check();
-
-    const observer = new MutationObserver(check);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ["data-theme"],
-    });
-    return () => observer.disconnect();
+    setMounted(true);
   }, []);
 
-  if (!show) return null;
+  if (!mounted) return null;
+  if (resolvedTheme !== "dark") return null;
 
   return <RainBg />;
 }

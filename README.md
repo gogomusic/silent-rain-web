@@ -41,3 +41,23 @@ pnpm install
 ```bash
 pnpm dev
 ```
+
+## 已知问题
+
+### shadcn CLI 无法通过 `pnpm dlx` 运行
+
+`pnpm dlx shadcn@latest` 会因为 `@modelcontextprotocol/sdk` 传递依赖的 `zod` 版本不兼容而报错：
+
+```
+Error [ERR_PACKAGE_PATH_NOT_EXPORTED]: Package subpath './v4' is not defined by "exports"
+```
+
+**解决方案**：使用 `npx` 代替 `pnpm dlx`：
+
+```bash
+# ❌ 不可用
+pnpm dlx shadcn@latest add <component>
+
+# ✅ 可用
+npx shadcn@latest add <component>
+```

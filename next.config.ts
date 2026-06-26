@@ -16,6 +16,7 @@ const nextConfig: NextConfig = {
   reactCompiler: true,
   cacheComponents: true,
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+  allowedDevOrigins: ["10.0.46.250"],
 };
 
 export default withMDX(nextConfig);

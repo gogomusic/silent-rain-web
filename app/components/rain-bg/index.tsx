@@ -9,7 +9,7 @@ interface RainBgProps {
 
 export function RainBg({ loading }: RainBgProps) {
   return (
-    <div className="relative flex w-full h-full items-center justify-center overflow-hidden bg-background">
+    <div className="relative flex w-full h-full items-center justify-center overflow-hidden bg-background -z-2">
       {/* 夜空渐层背景 */}
       <div
         className="absolute inset-0"

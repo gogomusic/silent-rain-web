@@ -4,7 +4,8 @@ import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import CloudMusic from "../cloud-music";
+import Bgm from "../bgm";
+import { ModeToggle } from "./theme-toggle";
 
 interface NavItem {
   label: string;
@@ -103,76 +104,6 @@ function NavDropdown({ item }: { item: NavItem }) {
   );
 }
 
-function ThemeToggle() {
-  const [dark, setDark] = useState(true);
-
-  useEffect(() => {
-    const saved =
-      (typeof localStorage !== "undefined" && localStorage.getItem("theme")) ||
-      "dark";
-    const isDark = saved === "dark";
-    document.documentElement.setAttribute("data-theme", saved);
-    setDark(isDark);
-  }, []);
-
-  const toggle = () => {
-    const next = !dark;
-    setDark(next);
-    document.documentElement.setAttribute(
-      "data-theme",
-      next ? "dark" : "light",
-    );
-    try {
-      localStorage.setItem("theme", next ? "dark" : "light");
-    } catch {
-      /* noop */
-    }
-  };
-
-  return (
-    <button
-      type="button"
-      onClick={toggle}
-      className="flex h-8 w-8 items-center justify-center rounded-full text-foreground/60 transition-colors hover:bg-foreground/10 hover:text-foreground"
-      aria-label={dark ? "切换到白天模式" : "切换到夜间模式"}
-    >
-      {dark ? (
-        /* 太阳 — 当前是夜间，点击切换到白天 */
-        <svg
-          className="h-4 w-4"
-          viewBox="0 0 16 16"
-          fill="none"
-          aria-hidden="true"
-        >
-          <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.3" />
-          <path
-            d="M8 1v1.5M8 13.5V15M1.5 8H3M13 8h1.5M3.05 3.05l1.06 1.06M11.89 11.89l1.06 1.06M3.05 12.95l1.06-1.06M11.89 4.11l1.06-1.06"
-            stroke="currentColor"
-            strokeWidth="1.3"
-            strokeLinecap="round"
-          />
-        </svg>
-      ) : (
-        /* 月亮 — 当前是白天，点击切换到夜间 */
-        <svg
-          className="h-4 w-4"
-          viewBox="0 0 16 16"
-          fill="none"
-          aria-hidden="true"
-        >
-          <path
-            d="M13.5 9.5A6 6 0 0 1 6.5 2.5 6 6 0 1 0 13.5 9.5z"
-            stroke="currentColor"
-            strokeWidth="1.3"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      )}
-    </button>
-  );
-}
-
 export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-foreground/10 bg-background/0 backdrop-blur-xs">
@@ -208,39 +139,27 @@ export function Header() {
 
         {/* Right actions */}
         <div className="flex items-center gap-3">
-          {/* Search */}
-          <button
-            type="button"
-            className="flex h-8 w-8 items-center justify-center rounded-full text-foreground/60 transition-colors hover:bg-foreground/10 hover:text-foreground"
-            aria-label="搜索"
-          >
-            <svg
-              className="h-4 w-4"
-              viewBox="0 0 16 16"
-              fill="none"
-              aria-hidden="true"
-            >
-              <circle
-                cx="7"
-                cy="7"
-                r="5.5"
-                stroke="currentColor"
-                strokeWidth="1.4"
-              />
-              <path
-                d="M11 11l3.5 3.5"
-                stroke="currentColor"
-                strokeWidth="1.4"
-                strokeLinecap="round"
-              />
-            </svg>
-          </button>
-
           {/* Music toggle */}
-          <CloudMusic />
+          <Bgm />
 
           {/* Theme toggle */}
-          <ThemeToggle />
+          <ModeToggle />
+
+          {/* Signup */}
+          <Link
+            href="/signup"
+            className="rounded-full px-4 py-1.5 text-sm text-foreground/80 transition-colors hover:bg-foreground/10 hover:text-foreground"
+          >
+            注册
+          </Link>
+
+          {/* Login */}
+          <Link
+            href="/login"
+            className="rounded-full px-4 py-1.5 text-sm bg-foreground/10 text-foreground/90 transition-colors hover:bg-foreground/20 hover:text-foreground"
+          >
+            登录
+          </Link>
         </div>
       </div>
     </header>
