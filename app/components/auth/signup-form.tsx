@@ -245,7 +245,7 @@ const SignupForm: React.FC = () => {
         <Field data-invalid={!!fieldErrors.captcha}>
           <FieldLabel htmlFor="captcha">验证码</FieldLabel>
 
-          <div className="flex gap-5 justify-center">
+          <div className="flex gap-5">
             <InputOTP
               maxLength={6}
               id="captcha"
