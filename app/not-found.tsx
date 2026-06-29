@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import styles from "./not-found.module.css";
+import styles from "./not-found.module.scss";
 
 const NotFound: React.FC = () => {
   const [mounted, setMounted] = useState(false);

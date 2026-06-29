@@ -33,19 +33,15 @@ const Bgm: React.FC = () => {
     };
   }, []);
 
-  // Sync playback with theme changes
+  // Sync playback pause with theme changes (no auto-play)
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio || !mounted) return;
 
-    if (resolvedTheme === "dark") {
-      audio.play().catch(() => {});
-      setPlaying(true);
-      playingRef.current = true;
-    } else {
+    if (resolvedTheme !== "dark" && playingRef.current) {
       audio.pause();
-      setPlaying(false);
       playingRef.current = false;
+      setPlaying(false);
     }
   }, [resolvedTheme, mounted]);
 

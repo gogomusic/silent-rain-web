@@ -17,6 +17,9 @@ const nextConfig: NextConfig = {
   cacheComponents: true,
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   allowedDevOrigins: ["10.0.46.250"],
+  experimental: {
+    optimizePackageImports: ["sonner", "zod"],
+  },
 };
 
 export default withMDX(nextConfig);

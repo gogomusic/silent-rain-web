@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import styles from "./error.module.css";
+import styles from "./error.module.scss";
 
 const ErrorPage = ({ error }: { error: Error & { digest?: string } }) => {
   const [mounted, setMounted] = useState(false);

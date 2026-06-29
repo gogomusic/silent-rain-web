@@ -1,6 +1,6 @@
 "use client";
 
-import "./animations.css";
+import "./animations.scss";
 import { Rainfall } from "@/components/rain-bg/rainfall";
 
 interface RainBgProps {
