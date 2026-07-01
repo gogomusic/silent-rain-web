@@ -23,7 +23,7 @@ const GlobalError = ({
     <html lang="zh-CN">
       <body className="m-0 h-[calc(100vdh-212px)] pt-40 bg-background">
         <div
-          className={`relative z-10 flex h-dvh w-screen flex-col items-center justify-center px-6 text-center transition-opacity duration-1000 ${
+          className={`relative z-10 flex h-dvh w-full flex-col items-center justify-center px-6 text-center transition-opacity duration-1000 ${
             mounted ? "opacity-100" : "opacity-0"
           }`}
         >

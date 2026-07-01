@@ -14,7 +14,7 @@ const NotFound: React.FC = () => {
 
   return (
     <div
-      className={`relative z-10 h-[calc(100vdh-212px)] pt-40 flex w-screen flex-col items-center justify-center px-6 text-center transition-opacity duration-1000 ${
+      className={`relative z-10 h-[calc(100vdh-212px)] pt-40 flex w-full flex-col items-center justify-center px-6 text-center transition-opacity duration-1000 ${
         mounted ? "opacity-100" : "opacity-0"
       }`}
     >

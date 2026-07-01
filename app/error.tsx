@@ -15,7 +15,7 @@ const ErrorPage = ({ error }: { error: Error & { digest?: string } }) => {
 
   return (
     <div
-      className={`relative z-10 flex h-[calc(100vdh-212px)] pt-40 w-screen flex-col items-center justify-center px-6 text-center transition-opacity duration-1000 ${
+      className={`relative z-10 flex h-[calc(100vdh-212px)] pt-40 w-full flex-col items-center justify-center px-6 text-center transition-opacity duration-1000 ${
         mounted ? "opacity-100" : "opacity-0"
       }`}
     >

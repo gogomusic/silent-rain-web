@@ -1,4 +1,5 @@
 import createMDX from "@next/mdx";
+import withPlaiceholder from "@plaiceholder/next";
 import type { NextConfig } from "next";
 
 const withMDX = createMDX({
@@ -18,8 +19,8 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   allowedDevOrigins: ["10.0.46.250"],
   experimental: {
-    optimizePackageImports: ["sonner", "zod"],
+    viewTransition: true,
   },
 };
 
-export default withMDX(nextConfig);
+export default withPlaiceholder(withMDX(nextConfig));

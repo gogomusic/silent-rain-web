@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Geist, Noto_Serif } from "next/font/google";
+import { Geist, Noto_Sans_SC, Noto_Serif } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "@/components/ui/sonner";
 import { cn } from "@/lib/utils";
@@ -14,6 +14,12 @@ const notoSerifHeading = Noto_Serif({
 });
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+
+const notoSansSC = Noto_Sans_SC({
+  subsets: ["latin", "cyrillic"],
+  weight: ["400", "500", "700"],
+  variable: "--font-cn",
+});
 
 export const metadata: Metadata = {
   title: "静夜聆雨",
@@ -33,6 +39,7 @@ export default function RootLayout({
       className={cn(
         "h-full antialiased font-sans",
         geist.variable,
+        notoSansSC.variable,
         notoSerifHeading.variable,
       )}
       suppressHydrationWarning
@@ -46,7 +53,9 @@ export default function RootLayout({
           storageKey="theme"
         >
           <Header />
-          <main className="flex-1 pt-14">{children}</main>
+          <main className="flex-1 mt-18 mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8">
+            {children}
+          </main>
           <Footer />
           <div className="fixed top-0 left-0 -z-1 w-screen h-dvh">
             <ThemeRainBg />

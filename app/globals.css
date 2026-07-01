@@ -49,6 +49,7 @@
 }
 
 html {
+  font-family: var(--font-sans), var(--font-cn);
   overflow-y: auto;
   scrollbar-width: thin;
   scrollbar-color: color-mix(in srgb, var(--foreground) 30%, transparent)
@@ -166,8 +167,5 @@ html::-webkit-scrollbar-thumb:hover {
   }
   body {
     @apply bg-background text-foreground;
-  }
-  html {
-    @apply font-sans;
   }
 }

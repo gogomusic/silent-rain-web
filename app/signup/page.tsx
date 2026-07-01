@@ -9,7 +9,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-const Signup: React.FC = () => {
+export default function Page() {
   return (
     <div className="flex items-center justify-center pb-4 pt-10">
       <Card size="sm" className="w-full max-w-sm">
@@ -34,6 +34,4 @@ const Signup: React.FC = () => {
       </Card>
     </div>
   );
-};
-
-export default Signup;
+}
